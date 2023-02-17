@@ -1,0 +1,608 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  height: 7   00vh;
+  background:linear-gradient(45deg, #132743, #5585b5) ;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    background-color:rgba(0,0,0,.5);
+    transition: 2s;
+    font-size: 20px;
+    z-index: 999;
+}
+.nav .img img{
+    width: 50px;
+    height: 50px;
+    animation: logo infinite 2s alternate;
+    position: relative;
+    transition: 2s;
+}
+
+.nav:hover .img img{
+   width: 100px;
+   height: 100px;
+
+}
+@keyframes logo{
+    0%{transform: rotate(180deg);}
+    100%{transform: rotate(-180deg);}
+}
+
+.nav ul{
+    list-style: none;
+}
+
+.nav ul li a{
+    color: white;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.nav .list .game{
+    position: relative;
+    display: flex;
+    justify-content:space-between;
+}
+
+.nav .list .nav-side {
+    position: absolute;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    color: white;
+    height: 25vh;
+    transition: 2s;
+    width: 140px;
+    /* transform: translate(100%); */
+    /* right: 165px; */
+    left: 0;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+}
+
+.nav:hover{
+    width: 20%;
+}
+
+
+.nav a:hover{
+    color:rgb(202, 77, 98) ;
+}
+
+.nav .list .game:hover +.nav-side ,.nav .list .nav-side:hover{
+    transform: translateX(-100%);
+    opacity: 1;
+}
+
+
+.cover{
+    background-image: url("img/bg.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.cover .overlay{
+    background: linear-gradient(180deg,white,rgb(153, 8, 32),black);
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    position: absolute;
+}
+
+.cover .cover-caption{
+    position: absolute;
+    top: 55%;
+    left: 32%;
+    text-align: center;
+    color: white;
+    right: 34%;
+}
+
+.cover .cover-caption h1 ,.cover .cover-caption p{
+    margin: 10px;
+}
+.cover .cover-caption h1 span{
+    color: rgb(202, 77, 98);
+}
+
+.cover .cover-caption button{
+    border-radius: 14px;
+    padding: 10px;
+    color: white;
+    background: none;
+    border: 2px solid rgb(193, 36, 62);
+}
+.cover .cover-caption button:not(:hover){
+    animation: border-button 1s;
+}
+
+@keyframes border-button {
+ 0%{border-color: rgb(202, 77, 98);}
+ 50%{border-color:white ;}
+ 100%{border-color: rgb(193, 36, 62);}
+ 
+}
+
+.cover .cover-caption button:hover{
+    background-color: rgba(202, 77, 98,.5);
+}
+
+.section{
+    width: 100%;
+    
+}
+
+.section .header{
+    text-align: center;
+    margin: 40px 0px 10px 0px;
+}
+
+.section .header h1{
+    position: relative;
+}
+
+.section .header h1::before{
+    content: "";
+    position: absolute;
+    background-color:rgb(193, 36, 62);
+    width: 20%;
+    height: 3px;
+    top: 100%;
+    left: 600px;
+}
+
+.section .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.section .card .card-img img{
+    width: 450px;
+    height: 550px;
+}
+
+.section .card{
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0px;
+}
+
+.section .cards .card::after{
+    content: "";
+    background: linear-gradient(90deg,rgb(153, 8, 32),black);
+    width: 450px;
+    height: 550px;
+    position: absolute;
+    bottom: 50.5%;
+    opacity: 0.9;
+    transition: 2s;
+}
+
+.section .cards .card::before{
+    content: "";
+    background: linear-gradient(90deg,rgb(153, 8, 32),black);
+    width: 450px;
+    height: 550px;
+    position: absolute;
+    top: 49.5%;
+    opacity: 0.9;
+    transition: 2s;
+}
+
+.section .cards .card:hover::after ,.section .cards .card:hover::before{
+    transform: skew(90deg);
+}
+
+.Rasing{
+    height: 100vh;
+}
+
+.Rasing h1 {
+    text-align: center;
+    position: relative;
+    margin-top: 70px;
+    color: white;
+}
+.Rasing h1 ::before{
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 3px;
+    bottom: 0;
+    left: 40%;
+    background:rgba(247, 7, 118, 1);
+    
+}
+.Rasing div.card1{
+    margin: 20px 30px;
+    width:450px;
+    height:800px;
+    background-image: url("img/re3.jfif");
+    background-size: cover;
+    float: left;
+    position: relative;
+    left: 0;
+    
+}
+.Rasing .card1:hover .overlay {
+    height: 100%;
+}  
+.Rasing .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:linear-gradient(90deg, rgba(247, 7, 118, 0.7), black);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 1s;
+}
+.Rasing div.card2{
+    margin: 60px 30px;
+    width:450px;
+    height:700px;
+    background-image: url("img/ra2.jfif");
+    background-size: cover;
+    float: left;
+    position: relative;
+    left: 0;
+    
+}
+.Rasing .card2:hover .overlay {
+    height: 100%;
+}  
+.Rasing .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:linear-gradient(90deg, rgba(247, 7, 118, 0.7), black);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 1s;
+}
+.Rasing div.card3{
+    margin: 20px 30px;
+    width: 450px;
+    height:800px;
+    background-image: url("img/re1.jfif");
+    background-size: cover;
+    float: left;
+    position: absolute;
+    right: 0;
+    
+}
+.Rasing .card3:hover .overlay {
+    height: 100%;
+}  
+.Rasing .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:linear-gradient(90deg, rgba(247, 7, 118, 0.7), black);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 1s;
+}
+.Rasing .btn1{
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background:0;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px; 
+    color: rgb(24, 24, 24);
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+.Rasing .btn1:hover{
+    background: rgba(247, 7, 118, 1);
+    transition: 1s;
+}
+.Zombie{
+    height: 100vh;
+    margin: 150px;
+}
+
+.Zombie h1 {
+    text-align: center;
+    position: relative;
+    margin-top: 70px;
+    color: white;
+}
+.Zombie h1 ::before{
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 3px;
+    bottom: 0;
+    left: 40%;
+    background:rgba(247, 7, 118, 1);
+    
+}
+.Zombie div.card1{
+    margin:20px 30px;
+    width:450px;
+    height:800px;
+    background-image: url("img/zo1.jfif");
+    background-size: cover;
+    float: left;
+    position: absolute;
+    left: 0;
+    
+}
+.Zombie .card1:hover .overlay {
+    height: 100%;
+}  
+.Zombie .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:linear-gradient(90deg, rgba(247, 7, 118, 0.7), black);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 1s;
+}
+.Zombie div.card2{
+    margin: 50px 50px;
+    width:450px;
+    height:800px;
+    background-image: url("img/zo2.jfif");
+    background-size: cover;
+    float: left;
+    position: absolute;
+    left: 490px;    
+}
+.Zombie .card2:hover .overlay {
+    height: 100%;
+}  
+.Zombie .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:linear-gradient(90deg, rgba(247, 7, 118, 0.7), black);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 1s;
+}
+.Zombie div.card3{
+    margin: 20px 30px;
+    width: 450px;
+    height:800px;
+    background-image: url("img/zo3.jfif");
+    background-size: cover;
+    float: left;
+    position: absolute;
+    right: 0;
+    
+}
+.Zombie .card3:hover .overlay {
+    height: 100%;
+}  
+.Zombie .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:linear-gradient(90deg, rgba(247, 7, 118, 0.7), black);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 1s;
+}
+.Zombie .btn1{
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background:0;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px; 
+    color: rgb(24, 24, 24);
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+.Zombie .btn1:hover{
+    background: rgba(247, 7, 118, 1);
+    transition: 1s;
+}
+.action{
+    height: 100vh;
+    margin: 180px;
+}
+
+.action h1 {
+    text-align: center;
+    position: relative;
+    margin-top: 70px;
+    color: white;
+}
+.action h1 ::before{
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 3px;
+    bottom: 0;
+    left: 40%;
+    background:rgba(247, 7, 118, 1);
+    
+}
+.action div.card1{
+    margin:20px 30px;
+    width:450px;
+    height:800px;
+    background-image: url("img/ac1.jfif");
+    background-size: cover;
+    float: left;
+    position: absolute;
+    left: 0;
+    
+}
+.action .card1:hover .overlay {
+    height: 100%;
+}  
+.action .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:linear-gradient(90deg, rgba(247, 7, 118, 0.7), black);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 1s;
+}
+.action div.card2{
+    margin: 50px 50px;
+    width:450px;
+    height:800px;
+    background-image: url("img/ac2.jfif");
+    background-size: cover;
+    float: left;
+    position: absolute;
+    left: 490px;    
+}
+.action .card2:hover .overlay {
+    height: 100%;
+}  
+.action .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:linear-gradient(90deg, rgba(247, 7, 118, 0.7), black);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 1s;
+}
+.action div.card3{
+    margin: 20px 30px;
+    width: 450px;
+    height:800px;
+    background-image: url("img/ac3.jfif");
+    background-size: cover;
+    float: left;
+    position: absolute;
+    right: 0;
+    
+}
+.action .card3:hover .overlay {
+    height: 100%;
+}  
+.action .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:linear-gradient(90deg, rgba(247, 7, 118, 0.7), black);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 1s;
+}
+.action .btn1{
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background:0;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px; 
+    color: rgb(24, 24, 24);
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+.action .btn1:hover{
+    background: rgba(247, 7, 118, 1);
+    transition: 1s;
+}form {
+    background-color: white;
+    margin: 15vh 10% 5vh 10%;
+    padding: 3vh;
+    width: 80%;
+    position: relative;
+    border-radius: 10px;
+}
+
+form h1 {
+    text-align: center;
+    text-shadow: 3px 3px 3px rgb(0, 0, 0);
+    margin: 0 0 10px 0;
+}
+
+form input[type=text] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 0 0;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+form textarea {
+    width: 100%;
+    border: 1px solid gray;
+    margin: 5px 0 0 0;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+form input[type=submit] {
+    padding: 10px;
+    margin: 5px 0 0 0;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+form input[type=submit]:hover {
+    background-color: rgba(247, 7, 118, 1);
+}
+
+.FoucsHere:focus {
+    box-shadow: 0 0 20px rgba(247, 7, 118, 1);
+}
